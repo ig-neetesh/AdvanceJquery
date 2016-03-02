@@ -9,11 +9,10 @@ class ContactController {
     }
 
     def add() {
-        Thread.sleep(3000)
     }
 
     def save(Contact contact) {
-        Thread.sleep(5000)
+        Thread.sleep(3000)
         renderAsJSON {
             contact.save(flush: true)
         }
@@ -25,6 +24,12 @@ class ContactController {
         renderAsJSON {
             contact.save(flush: true)
         }
+    }
+
+    def isContactExists() {
+        Contact contact = Contact.findByMobile(params.mobileField)
+        String result = contact ? false : true
+        render result
     }
 
     private void renderAsJSON(def cl) {
