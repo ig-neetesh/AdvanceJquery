@@ -10,6 +10,7 @@ class ContactController {
 
     def add() {
         Thread.sleep(3000)
+        render template: 'add'
     }
 
     def save(Contact contact) {

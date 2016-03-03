@@ -48,7 +48,7 @@
     $(document).ready(function () {
 
         var loadModal = function () {
-            $.post("/contact/add", function (response) {
+            $.get("/contact/add", function (response) {
                 $('#modalBody').html(response);
             });
         };
